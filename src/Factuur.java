@@ -27,10 +27,10 @@ public class Factuur {
     }
 
     //Datum factuur
-    public Date datumFactuur(){
+    public String datumFactuur(){
         Date datumFactuur = new Date();
-        String str = formatter.format(datumFactuur);
-        return datumFactuur;
+        String datumString = formatter.format(datumFactuur);
+        return datumString;
     }
     //Datum betaald
     //beheren van factuurlijnen(hier zullen de producten zitten)

@@ -83,7 +83,7 @@ public class Product {
     }
 
     public String toString(){
-        return naamProduct + " " + categorie + " " + maat;
+        return naamProduct /*+ " " + categorie + " " + maat*/;
     }
 
     //categorie

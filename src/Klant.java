@@ -8,6 +8,6 @@ public class Klant {
     }
 
     public String getKlantVolledigeNaam(){
-        return achternaamKlant + voornaamKlant;
+        return achternaamKlant + " " + voornaamKlant;
     }
 }

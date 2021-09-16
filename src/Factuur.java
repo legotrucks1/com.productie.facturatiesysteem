@@ -1,16 +1,20 @@
+import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.util.Date;
 
 public class Factuur {
     public int volgnummer = 0;
-    Klant k;
+    Klant klant;
+    Date datumBetaald;
+    SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yy");
 
-    public Factuur(Klant klant , Date datumFactuur, Date datumBetaald){
-
+    public Factuur(Klant klant , Date datumBetaald){
+        this.klant=klant;
+        this.datumBetaald=datumBetaald;
     }
     //klant
-    public void klantnaam(String voornaam, String achternaam){
-
+    public String klantnaam(String voornaam, String achternaam){
+        return  klant.getKlantVolledigeNaam();
     }
 
     //volgnummer
@@ -21,12 +25,18 @@ public class Factuur {
     public int getVolgnummer(){
         return volgnummer;
     }
+
     //Datum factuur
+    public Date datumFactuur(){
+        Date datumFactuur = new Date();
+        String str = formatter.format(datumFactuur);
+        return datumFactuur;
+    }
     //Datum betaald
     //beheren van factuurlijnen(hier zullen de producten zitten)
-    public void factuurlijn(){
+    public void factuurlijn(Product product, int hoeveelheid){
 
-        new Product("Water", "Drank", 1, "330CL");
+        System.out.print(product.toString() + " " + hoeveelheid);
         //System.out.println("Klantnaam: " + klant1.getKlantVolledigeNaam() + "Datum: ");
         System.out.println("Factuurnummer: " + getVolgnummer());
     }

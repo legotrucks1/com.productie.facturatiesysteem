@@ -1,3 +1,4 @@
+import java.sql.Array;
 import java.util.ArrayList;
 
 public class Product {
@@ -6,6 +7,7 @@ public class Product {
     private ArrayList<String> productCategorieen = new ArrayList<>();
     private ArrayList<String> fotosProduct = new ArrayList<>();// url string
     private ArrayList<String> matenProduct = new ArrayList<>();
+
 
     public Product(){
         this.naamProduct = "";
@@ -85,6 +87,7 @@ public class Product {
     public String toString(){
         return naamProduct /*+ " " + categorie + " " + maat*/;
     }
+
 
     //categorie
     //fotos => meerdere fotos mogelijk

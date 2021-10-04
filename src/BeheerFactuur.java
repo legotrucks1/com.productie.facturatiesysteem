@@ -44,17 +44,21 @@ public class BeheerFactuur {
 
         System.out.println(tM.get(1).getNaamProduct());
 
-        System.out.println("Kies uit de volgende producten." + "\n");
-        for (Map.Entry<Integer, Product> productEntry : tM.entrySet()) {
-            System.out.println(productEntry.getKey() + ". " + productEntry.getValue().getNaamProduct());
-        }
-
         CheckInput chkInput;
 
-        // Hier gaan we waarschijnlijk een deel naar factuur moeten overhevelen.
         while (input != 0) {
+            System.out.println("Kies uit de volgende producten." + "\n");
+            for (Map.Entry<Integer, Product> productEntry : tM.entrySet()) {
+
+                System.out.println(productEntry.getKey() + ". " + productEntry.getValue().getNaamProduct());
+
+
+
+            }
+
             System.out.println("Tik het nummer van het product in dat u wenst te hebben of type \"0\" om het programma te stoppen.");
-            //TO DO: factuur uitprinten,
+
+
             // producten doorgeven aan factuur om te kunnen printen.
             while (error){
                 input = scn.nextInt();
@@ -86,10 +90,12 @@ public class BeheerFactuur {
                 }
                 error = true;
 
+
                 maatProduct = productMandje.get(productMandje.size()-1).getMatenProduct().get(maatInput-1);
                 k1.addToGekozenMaten(maatProduct);
                 urlProduct = productMandje.get(productMandje.size()-1).getFotosProduct().get(maatInput-1);
                 k1.addToUrlList(urlProduct);
+
 
 
             }

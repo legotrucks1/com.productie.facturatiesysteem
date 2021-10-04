@@ -16,7 +16,7 @@ public class ProductenDB extends TreeMap {
                         "https://productimages.thequestionmark.org/images/medium/7bc49d43d46d56ddfd2359345f55bfe3.jpg",
                         "https://www.dessauvage.be/media/catalog/product/cache/1/image/440x/9df78eab33525d08d6e5fb8d27136e95/c/1/c10899.jpg",
                         "")),
-                new ArrayList<>(Arrays.asList("330ml", "500ML", "1L", "1,5L")));
+                new ArrayList<>(Arrays.asList("330ML", "500ML", "1L", "1,5L")));
         Product p2 = new Product("Coca-Cola",
                 new ArrayList<>(Arrays.asList("Drank", "Frisdrank")),
                 new ArrayList<>(Arrays.asList("https://www.skout.com.au/img/products/50009181.jpg",

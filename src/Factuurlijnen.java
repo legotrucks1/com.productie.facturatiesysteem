@@ -1,6 +1,7 @@
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+import java.util.Map;
 
 public class Factuurlijnen {
     // factuur
@@ -14,7 +15,7 @@ public class Factuurlijnen {
         this.datumBetaald=datumBetaald;
         this.f=f;
     }
-    public void printFactuur(ArrayList<Product> productMandje, List<Integer> hoeveelheidProducten){
+    public void printFactuur(){
         f.setVolgnummer();
 
         System.out.println("Naam en voornaam klant:" + klant.getKlantVolledigeNaam());
@@ -24,19 +25,35 @@ public class Factuurlijnen {
         System.out.println("===================================================================");
         // Hier komen de factuurlijnen
 
-        //StringBuilder sb = new StringBuilder();
-        for (int i = 0; i<productMandje.size(); i++){
-            System.out.println(productMandje.get(i) +
-                    " \t " + hoeveelheidProducten.get(i) +
-                    " \t " + this.klant.getGekozenMaten().get(i) +
-                    "\t" + productMandje.get(i).getAllCategoriesOfProduct());
+
+        //itereren over map
+        for(Map.Entry<String, ArrayList<GekozenProduct>> gekozenProduct : klant.getProductmandje().getProductmandje().entrySet()) {
+            for (GekozenProduct prod : gekozenProduct.getValue()) {
+                System.out.println(prod.getProduct() +
+                        " \t " + prod.getHoeveelheid() +
+                        " \t " + prod.getMaat() +
+                        "\t" + prod.getProduct().getAllCategoriesOfProduct());
+            }
         }
+
+//        //StringBuilder sb = new StringBuilder();
+//        for (int i = 0; i<productMandje.size(); i++){
+//            System.out.println(productMandje.get(i) +
+//                    " \t " + hoeveelheidProducten.get(i) +
+//                    " \t " + this.klant.getGekozenMaten().get(i) +
+//                    "\t" + productMandje.get(i).getAllCategoriesOfProduct());
+//        }
         System.out.println("");
         System.out.println("Hier zijn alle fotos van de gekozen producten.");
-        for (int i = 0; i < productMandje.size(); i++){
-            System.out.println(this.klant.getUrls().get(i));
+        for(Map.Entry<String, ArrayList<GekozenProduct>> gekozenProduct : klant.getProductmandje().getProductmandje().entrySet()){
+            for (GekozenProduct prod : gekozenProduct.getValue()){
+                System.out.println(prod.getUrl());
+            }
         }
-        System.out.println("===================================================================");
+//        for (int i = 0; i < productMandje.size(); i++){
+//            System.out.println(this.klant.getUrls().get(i));
+//        }
+//        System.out.println("===================================================================");
     }
 
 }

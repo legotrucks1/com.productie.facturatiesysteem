@@ -27,8 +27,10 @@ public class BeheerFactuur {
         }
         Scanner scn = new Scanner(System.in);
         Date datumBetaald = new Date();
-        ArrayList<Product> productMandje = new ArrayList<>();
-        List<Integer> hoeveelheidProducten = new ArrayList<>();
+        //ArrayList<Product> productMandje = new ArrayList<>();
+        //List<Integer> hoeveelheidProducten = new ArrayList<>();
+        Productmand productMandje = new Productmand();
+
         String maatProduct="";
         String urlProduct="";
 
@@ -69,15 +71,16 @@ public class BeheerFactuur {
             error = true;
             if (input != 0) {
                 // productmandje gaat het item uit de database halen (1 = p1, 2 = p2,...)
-                productMandje.add(tM.get(input));
+                Product gekozenProduct = tM.get(input);
+                //productMandje.add(tM.get(input));
                 System.out.println("Hoeveel stuks wilt u hebben?");
                 hoeveelheid = scn.nextInt();
 
-                hoeveelheidProducten.add(hoeveelheid);
+                //hoeveelheidProducten.add(hoeveelheid);
 
                 System.out.println("Hoe groot moet de verpakking zijn? de waarden voor dit product zijn:");
-                ArrayList<String> maten = productMandje.get(productMandje.size()-1).getMatenProduct();
-                ArrayList<String> fotosProduct = productMandje.get(productMandje.size()-1).getFotosProduct();
+                ArrayList<String> maten = gekozenProduct.getMatenProduct();
+                ArrayList<String> fotosProduct = gekozenProduct.getFotosProduct();
                 for (int i = 0; i < maten.size(); i++) {
                     System.out.println(i + 1 + ". " + maten.get(i));
                 }
@@ -90,11 +93,16 @@ public class BeheerFactuur {
                 }
                 error = true;
 
+                // aan nieuwe productmanje toevoegen
+                productMandje.addProductToMandje(gekozenProduct, hoeveelheid, gekozenProduct.getMatenProduct().get(maatInput - 1), gekozenProduct.getFotosProduct().get(maatInput - 1));
+                // productmandje aan klant voegen
+                k1.setProductmandje(productMandje);
 
-                maatProduct = productMandje.get(productMandje.size()-1).getMatenProduct().get(maatInput-1);
-                k1.addToGekozenMaten(maatProduct);
-                urlProduct = productMandje.get(productMandje.size()-1).getFotosProduct().get(maatInput-1);
-                k1.addToUrlList(urlProduct);
+
+                //maatProduct = productMandje.get(productMandje.size()-1).getMatenProduct().get(maatInput-1);
+                //k1.addToGekozenMaten(maatProduct);
+                //urlProduct = productMandje.get(productMandje.size()-1).getFotosProduct().get(maatInput-1);
+                //k1.addToUrlList(urlProduct);
 
 
 
@@ -104,7 +112,7 @@ public class BeheerFactuur {
         // Hier gaat de factuur zelf komen.
         Factuur f = new Factuur(k1, datumBetaald);
         Factuurlijnen factuurlijnen = new Factuurlijnen(k1, datumBetaald, f);
-        factuurlijnen.printFactuur(productMandje, hoeveelheidProducten);
+        factuurlijnen.printFactuur();
 
 
     }

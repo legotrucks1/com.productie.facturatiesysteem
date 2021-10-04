@@ -28,6 +28,18 @@ public class Product {
         this.categorie = categorie;
     }
 
+    public String getAllCategoriesOfProduct(){
+        if (productCategorieen.size() <= 1){
+            return productCategorieen.get(0);
+        }
+        StringBuilder sb = new StringBuilder();
+        for (String categorie: productCategorieen) {
+            sb.append(categorie + ", ");
+        }
+        return sb.substring(0, sb.length()-2);
+
+    }
+
     public String getNaamProduct() {
         return naamProduct;
     }

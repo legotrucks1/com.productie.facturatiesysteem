@@ -7,6 +7,8 @@ public class BeheerFactuur {
 
     public static void main(String[] args) {
 
+        //TO DO: we willen na de factuurlijnen de URL's tonen van de producten zelf
+
         class CheckInput{
             private int input;
             private int max;
@@ -39,6 +41,8 @@ public class BeheerFactuur {
         productenDB.dbInit();
         TreeMap<Integer, Product> tM = (TreeMap) productenDB.getProductMap();
 
+        System.out.println(tM.get(1).getNaamProduct());
+
         System.out.println("Kies uit de volgende producten." + "\n");
         for (Map.Entry<Integer, Product> productEntry : tM.entrySet()) {
             System.out.println(productEntry.getKey() + ". " + productEntry.getValue().getNaamProduct());
@@ -59,6 +63,7 @@ public class BeheerFactuur {
 
             error = true;
             if (input != 0) {
+                // productmandje gaat het item uit de database halen (1 = p1, 2 = p2,...)
                 productMandje.add(tM.get(input));
                 System.out.println("Hoeveel stuks wilt u hebben?");
                 hoeveelheid = scn.nextInt();

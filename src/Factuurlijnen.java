@@ -24,8 +24,16 @@ public class Factuurlijnen {
         System.out.println("===================================================================");
         // Hier komen de factuurlijnen
 
+        //StringBuilder sb = new StringBuilder();
         for (int i = 0; i<productMandje.size(); i++){
-            System.out.println(productMandje.get(i) + " \t " + hoeveelheidProducten.get(i) + " \t " + this.klant.getGekozenMaten().get(i));
+            System.out.println(productMandje.get(i) +
+                    " \t " + hoeveelheidProducten.get(i) +
+                    " \t " + this.klant.getGekozenMaten().get(i) +
+                    "\t" + productMandje.get(i).getAllCategoriesOfProduct());
+        }
+        System.out.println("Hier zijn alle fotos van de gekozen producten.");
+        for (int i = 0; i < productMandje.size(); i++){
+            System.out.println(this.klant.);
         }
         System.out.println("===================================================================");
     }

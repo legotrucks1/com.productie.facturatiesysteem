@@ -33,7 +33,7 @@ public class Factuurlijnen {
         }
         System.out.println("Hier zijn alle fotos van de gekozen producten.");
         for (int i = 0; i < productMandje.size(); i++){
-           // System.out.println(this.klant.);
+            System.out.println(this.klant.getUrls().get(i));
         }
         System.out.println("===================================================================");
     }

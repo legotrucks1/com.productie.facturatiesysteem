@@ -88,7 +88,8 @@ public class BeheerFactuur {
 
                 maatProduct = productMandje.get(productMandje.size()-1).getMatenProduct().get(maatInput-1);
                 k1.addToGekozenMaten(maatProduct);
-                //urlProduct = productMandje.get(productMandje.size()-1.getFotosProduct().get(maatInput-1));
+                urlProduct = productMandje.get(productMandje.size()-1).getFotosProduct().get(maatInput-1);
+                k1.addToGekozenMaten(urlProduct);
 
 
             }

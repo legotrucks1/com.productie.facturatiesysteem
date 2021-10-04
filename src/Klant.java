@@ -19,6 +19,12 @@ public class Klant {
         gekozenMaten.add(gekozenMaat);
     }
 
+    public ArrayList<String> getUrls(){
+        return teTonenUrls;
+    }
+    public void addToUrlList(String url){
+        teTonenUrls.add(url);
+    }
     // public void getAfbeelding(String url){teTonenUrls.add(url);}
 
     public String getKlantVolledigeNaam(){

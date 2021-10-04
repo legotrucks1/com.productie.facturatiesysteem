@@ -30,6 +30,7 @@ public class BeheerFactuur {
         ArrayList<Product> productMandje = new ArrayList<>();
         List<Integer> hoeveelheidProducten = new ArrayList<>();
         String maatProduct="";
+        String urlProduct="";
 
         int input = -1;
         //int aantalProducten = 5;
@@ -72,6 +73,7 @@ public class BeheerFactuur {
 
                 System.out.println("Hoe groot moet de verpakking zijn? de waarden voor dit product zijn:");
                 ArrayList<String> maten = productMandje.get(productMandje.size()-1).getMatenProduct();
+                ArrayList<String> fotosProduct = productMandje.get(productMandje.size()-1).getFotosProduct();
                 for (int i = 0; i < maten.size(); i++) {
                     System.out.println(i + 1 + ". " + maten.get(i));
                 }
@@ -86,6 +88,7 @@ public class BeheerFactuur {
 
                 maatProduct = productMandje.get(productMandje.size()-1).getMatenProduct().get(maatInput-1);
                 k1.addToGekozenMaten(maatProduct);
+                //urlProduct = productMandje.get(productMandje.size()-1.getFotosProduct().get(maatInput-1));
 
 
             }

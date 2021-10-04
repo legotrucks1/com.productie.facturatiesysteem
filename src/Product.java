@@ -56,13 +56,7 @@ public class Product {
         this.maat = maat;
     }
 
-    public int getFoto() {
-        return foto;
-    }
 
-    public void setFoto(int foto) {
-        this.foto = foto;
-    }
 
     public int getHoeveelheid() {
         return hoeveelheid;

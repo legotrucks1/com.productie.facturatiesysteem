@@ -19,7 +19,7 @@ public class Klant {
         gekozenMaten.add(gekozenMaat);
     }
 
-    // public void getAfbeelding(String url){teTonenUrls.add}
+    // public void getAfbeelding(String url){teTonenUrls.add(url);}
 
     public String getKlantVolledigeNaam(){
         return achternaamKlant + " " + voornaamKlant;

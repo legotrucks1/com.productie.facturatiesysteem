@@ -19,6 +19,7 @@ public class Klant {
         gekozenMaten.add(gekozenMaat);
     }
 
+    // bij product zetten
     public ArrayList<String> getUrls(){
         return teTonenUrls;
     }

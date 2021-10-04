@@ -7,7 +7,7 @@ public class BeheerFactuur {
 
     public static void main(String[] args) {
 
-        //TO DO: we willen na de factuurlijnen de URL's tonen van de producten zelf
+        //TO DO: foutcheck bij product indien meermaals hetzelfde product
 
         class CheckInput{
             private int input;
@@ -89,7 +89,7 @@ public class BeheerFactuur {
                 maatProduct = productMandje.get(productMandje.size()-1).getMatenProduct().get(maatInput-1);
                 k1.addToGekozenMaten(maatProduct);
                 urlProduct = productMandje.get(productMandje.size()-1).getFotosProduct().get(maatInput-1);
-                k1.addToGekozenMaten(urlProduct);
+                k1.addToUrlList(urlProduct);
 
 
             }

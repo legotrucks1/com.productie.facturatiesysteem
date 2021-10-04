@@ -43,6 +43,7 @@ public class ProductenDB extends TreeMap {
                         "https://static.webshopapp.com/shops/050959/files/025846395/dreft-hand-dishwashing-original-1015-ml.jpg")),
                 new ArrayList<>(Arrays.asList("890ML", "1L")));
 
+        // put is vergelijkbaar met add bij een list.
         productMap.put(1, p1);
         productMap.put(2, p2);
         productMap.put(3, p3);
